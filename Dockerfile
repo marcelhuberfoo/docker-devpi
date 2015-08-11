@@ -22,6 +22,7 @@ RUN pip install devpi-server devpi-client devpi-web
 
 VOLUME ["/data"]
 ENV DEVPI_SERVERDIR=/data DEVPI_CLIENTDIR=/tmp/devpi-client
+EXPOSE 3141
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["dummy"]
