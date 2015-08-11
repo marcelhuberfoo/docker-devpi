@@ -18,7 +18,7 @@ RUN mkdir -p -m 0775 /data && chown -R $UID:$GID /data
 
 ADD https://raw.github.com/pypa/pip/master/contrib/get-pip.py /get-pip.py    
 RUN python /get-pip.py
-RUN pip install devpi-server devpi-client devpi-web
+RUN pip install devpi-server devpi-client devpi-web certifi
 
 VOLUME ["/data"]
 ENV DEVPI_CLIENTDIR=/tmp/devpi-client \
