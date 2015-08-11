@@ -12,7 +12,8 @@ if [ "$1" = 'dummy' ]; then
     gosu $UNAME devpi index -y -c public pypi_whitelist='*'
     gosu $UNAME devpi-server --stop --host 0.0.0.0 --port 3141
   fi
-  # now start the server in the foreground to catch signals
+  # now start the server in the foreground to catch INT signal
+  # -> stop this server using: docker kill --signal=INT container
   exec gosu $UNAME devpi-server --host 0.0.0.0 --port 3141
 fi
 exec "$@"
