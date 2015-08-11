@@ -21,7 +21,10 @@ RUN python /get-pip.py
 RUN pip install devpi-server devpi-client devpi-web
 
 VOLUME ["/data"]
-ENV DEVPI_SERVERDIR=/data DEVPI_CLIENTDIR=/tmp/devpi-client
+ENV DEVPI_CLIENTDIR=/tmp/devpi-client \
+    DEVPI_SERVERDIR=/data \
+    DEVPI_SERVER_OPTIONS="--host=0.0.0.0 --port=3141"
+
 EXPOSE 3141
 
 ENTRYPOINT ["/entrypoint.sh"]

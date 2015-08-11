@@ -13,6 +13,6 @@ if [ "$1" = 'dummy' ]; then
   fi
   # now start the server in the foreground to catch INT signal
   # -> stop this server using: docker kill --signal=INT container
-  exec gosu $UNAME devpi-server --host 0.0.0.0 --port 3141
+  exec gosu $UNAME devpi-server $DEVPI_SERVER_OPTIONS
 fi
 exec "$@"
