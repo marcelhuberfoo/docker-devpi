@@ -1,6 +1,5 @@
 #!/bin/sh
 set -e
-set -x
 umask 002
 
 if [ "$1" = 'dummy' ]; then
