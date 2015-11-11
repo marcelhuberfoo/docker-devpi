@@ -4,8 +4,6 @@ MAINTAINER Marcel Huber <marcelhuberfoo@gmail.com>
 
 USER root
 
-RUN pacman -Syy --noconfirm reflector
-RUN reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 RUN pacman -Syyu --noconfirm && \
     pacman-db-upgrade && \
     pacman -S --noconfirm sqlite3 python && \
