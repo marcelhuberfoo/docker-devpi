@@ -12,7 +12,7 @@ RUN pacman -Syyu --noconfirm && \
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-RUN mkdir -p -m 0775 /data && chown -R $UID:$GID /data
+RUN mkdir -p -m 0775 /data && chown -R $UNAME:$GNAME /data
 
 ADD https://raw.github.com/pypa/pip/master/contrib/get-pip.py /get-pip.py    
 RUN python /get-pip.py
